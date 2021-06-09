@@ -13,8 +13,9 @@ class Trips extends Component {
         .then(response => response.json())
         .then(data => 
           this.setState({
-            allTrips: data
-        }))
+              allTrips: data
+            })
+        )
     }
 
     toggleDisplayForm = () => {
