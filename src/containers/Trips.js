@@ -45,18 +45,14 @@ class Trips extends Component {
     }
 
 
-
-
     render() {
         const tripsList = this.state.allTrips.map(tripE => <TripLink key={tripE.id} trip={tripE}/>)
 
         return (
             <div>
-                <h1>Trips Master List ...?</h1>
-                <ul>
-                    {tripsList}
-                </ul>
-                {this.state.displayForm ? <TripForm addNewTrip={this.addNewTrip}/>: <button onClick={this.toggleDisplayForm}>Add Trip</button>}
+                <h1>Master Trips List</h1>
+                {tripsList}
+                {this.state.displayForm ? <TripForm addNewTrip={this.addNewTrip}/>: <button onClick={this.toggleDisplayForm} className="submit">Add Trip</button>}
             </div>
         )
     }

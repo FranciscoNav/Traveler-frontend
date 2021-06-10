@@ -24,12 +24,12 @@ class ExpenseForm extends Component {
         return (
             <div>
                 <form className="add-new-trip" onSubmit={this.handleSubmit}>
-                    <h3>Add New Trip</h3>
+                    <h3>Add New Expense</h3>
                     <input type="text" name="name" value= {this.state.name} placeholder="Expense Name" onChange={this.handleChange} />
                     <br/>
                     <input type="text" name="price" value={this.state.price} placeholder="Enter Cost" onChange={this.handleChange} />
                     <br/>
-                    <input type="submit" name="submit" value="Submit New Trip" className="submit"/>
+                    <input type="submit" name="submit" value="Submit New Expense" className="submit"/>
                 </form>
             </div>
         )
