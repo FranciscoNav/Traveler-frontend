@@ -17,7 +17,7 @@ const Expense = (props) => {
         <div className="card">
             <h3>{props.expense.name}: ${props.expense.price}</h3>
             {expenseEditFormFlag ? <ExpenseEditForm expense={props.expense} editTheExp={props.editTheExp} toggleExpForm={toggleExpForm}/> : <button onClick={toggleExpForm}>Edit Expense</button>}
-            <button onClick={handleClick}>Delete</button> 
+            <button onClick={handleClick} className="delete">Delete</button> 
         </div>
     )
 }

@@ -6,6 +6,7 @@ const Trip = (props) =>{
     const [trip, setTrip] = useState({
         expenses: []
     })
+    const [tripCost, setTripCost] = useState(0)
     const [expenseFormFlag, setExpenseFormFlag] = useState(false)
 
     useEffect(() => {
@@ -67,15 +68,19 @@ const Trip = (props) =>{
         })
         .then(resp => resp.json())
         .then(data =>{
+            const newExpenses = trip.expenses.map(e => e.id !=data.id ? e : data)
             setTrip({
                 ...trip,
-                expenses: [...trip.expenses, data]
+                expenses: newExpenses
             })
         })
     }
 
     const calculateCost = () =>{
-
+        const findPrice = trip.expenses.map(exp => exp.price)
+        const totalCost = findPrice.reduce((accumulator, currentValue) => accumulator+ currentValue)
+        console.log(totalCost)
+        setTripCost(totalCost)
     }
 
     const expenses = trip.expenses.map(exp => <Expense key={exp.id} expense={exp} editTheExp={editExpense} deleteTheExp={deleteExpense}/>)
@@ -89,8 +94,12 @@ const Trip = (props) =>{
             {expenses}
             <br/>
             {expenseFormFlag ? <ExpenseForm newExpense={addNewExpense} trip={trip}/> : <button onClick={toggleForm} className="submit">Add Expense</button>}
+            <br/>
+            <br/>
+            <button> Delete The Entire Trip!</button>
             <hr/>
-            <p id="net-value">Trips Total Cost = $______</p>
+            <h3 id="net-value">Trip's Total Cost = ${tripCost}</h3>
+            <button onClick={calculateCost}>Calculate Total Cost</button>
         </div>
     )
 }

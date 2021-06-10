@@ -29,16 +29,36 @@ body {
 
 .submit:hover {
   background-color: whitesmoke;
-  border: #4b73e0 solid 1px;
+  border: #000000 solid 1px;
   color: #4b73e0;
 }
 
 .card {
-  background-color: white;
+  background-color: rgb(172, 172, 172);
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
   height: auto;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #4b73e0
+}
+
+.trip-card{
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  height: auto;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #4b73e0
+}
+
+.delete{
+  color: red
+}
+
+.delete:hover{
+  background-color: rgb(75, 64, 64);
+  color: red
+  
 }

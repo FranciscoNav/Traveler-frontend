@@ -44,9 +44,8 @@ class Trips extends Component {
         this.toggleDisplayForm()
     }
 
-
     render() {
-        const tripsList = this.state.allTrips.map(tripE => <TripLink key={tripE.id} trip={tripE}/>)
+        const tripsList = this.state.allTrips.map(tripE => <TripLink key={tripE.id} trip={tripE} deleteTrip={this.deleteTrip}/>)
 
         return (
             <div>
