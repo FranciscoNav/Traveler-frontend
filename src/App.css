@@ -1,9 +1,10 @@
 .App {
+  
   text-align: center;
 }
 
-body {
-  background:rgb(218, 244, 255)
+body{
+  background: linear-gradient(0.25turn, #97c6e2, #ffffff, #97c6e2);
 }
 
 .navbar{
@@ -34,7 +35,7 @@ body {
 }
 
 .card {
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(199, 199, 199);
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
@@ -61,4 +62,10 @@ body {
   background-color: rgb(75, 64, 64);
   color: red
   
+}
+
+p1{
+  display: block;
+  margin: auto;
+  width: 55%;
 }

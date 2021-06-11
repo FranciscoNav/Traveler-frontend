@@ -96,7 +96,6 @@ const Trip = (props) =>{
             {expenseFormFlag ? <ExpenseForm newExpense={addNewExpense} trip={trip}/> : <button onClick={toggleForm} className="submit">Add Expense</button>}
             <br/>
             <br/>
-            <button> Delete The Entire Trip!</button>
             <hr/>
             <h3 id="net-value">Trip's Total Cost = ${tripCost}</h3>
             <button onClick={calculateCost}>Calculate Total Cost</button>
