@@ -77,10 +77,14 @@ const Trip = (props) =>{
     }
 
     const calculateCost = () =>{
-        const findPrice = trip.expenses.map(exp => exp.price)
-        const totalCost = findPrice.reduce((accumulator, currentValue) => accumulator+ currentValue)
-        console.log(totalCost)
-        setTripCost(totalCost)
+        const stateLength = trip.expenses.length
+        if ( stateLength == 0){
+            return 0
+        }else{
+            const findPrice = trip.expenses.map(exp => exp.price)
+            const totalCost = findPrice.reduce((accumulator, currentValue) => accumulator+ currentValue)
+            setTripCost(totalCost)
+        }
     }
 
     const expenses = trip.expenses.map(exp => <Expense key={exp.id} expense={exp} editTheExp={editExpense} deleteTheExp={deleteExpense}/>)
